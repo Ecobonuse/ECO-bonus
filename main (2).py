@@ -44,8 +44,7 @@ async def button_handler(update: Update, context: CallbackContext):
         await update.message.reply_text(f"💰 Sizda {users.get(user_id, 0)} Eco Ball mavjud.")
     elif text == "🏆 Top 10":
         sorted_users = sorted(users.items(), key=lambda x: x[1], reverse=True)[:10]
-        msg = "🏆 Top 10 foydalanuvchilar:
-"
+        msg = "🏆 Top 10 foydalanuvchilar:"
         for i, (uid, bal) in enumerate(sorted_users, 1):
             msg += f"{i}. 👤 {uid} - {bal} Eco Ball\n"
         await update.message.reply_text(msg)
